@@ -1,5 +1,5 @@
 """
-Creating a framework for graph problems
+Creating an edge framework for graph problems
 """
 
 from __future__ import annotations
@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Edges:
+class Edge:
 	u: int
 	v: int
 
