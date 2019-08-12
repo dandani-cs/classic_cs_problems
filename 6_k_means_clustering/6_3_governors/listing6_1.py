@@ -50,7 +50,7 @@ class KMeans(Generic[Point]):
 		return [x.centroid for x in self._clusters]
 
 
-	def _dimension_slice(self, dimension):
+	def _dimension_slice(self, dimension, iter):
 		return [x.dimensions[dimension] for x in self._points]
 
 
