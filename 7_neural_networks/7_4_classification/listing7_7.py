@@ -47,7 +47,7 @@ class Network:
 		for location, xs in enumerate(inputs):
 			ys = expecteds[location]
 			outs = self.outputs(xs)
-			# print(outs)
+			#print(outs)
 			self.backpropagation(ys)
 			self.update_weights()
 
@@ -56,9 +56,11 @@ class Network:
 		correct = 0
 		# counter = 0
 		for input, expected in zip(inputs, expecteds):
-			# print("input, expected: ", input, expected)
+			#print("HJACKSBKD")
+			#print("input, expected: ", input, expected)
 			result = interpret_output(self.outputs(input))
-			# print("result: ", result)
+			#print("result: ", result)
+
 			if result == expected:
 				correct += 1
 

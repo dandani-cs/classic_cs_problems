@@ -35,6 +35,7 @@ if __name__ == '__main__':
 
 	normalize_by_feature_scaling(iris_parameters)
 
+
 	iris_network = Network([4, 6, 3], 0.3)
 
 	def iris_interpret_output(output):
@@ -47,20 +48,16 @@ if __name__ == '__main__':
 
 	iris_trainers = iris_parameters[0:140]
 	iris_trainers_corrects = iris_classification[0:140]
-	for j in range(50):
-		# print(j)
+	#print(len(iris_trainers))
+	for _ in range(50):
 		iris_network.train(iris_trainers, iris_trainers_corrects)
 
-
 	iris_testers = iris_parameters[140:150]
-	iris_testers_corrects = iris_species[140: 150]
-	# iris_testers_classification = iris_classification[140:150]
-	# for i in iris_testers_classification:
-	# 	print(i)
-
-
+	iris_testers_corrects = iris_species[140:150]
+	# print(iris_testers_corrects)
+	# print(iris_species[140:150])
+	# print(len(iris_species))
 	iris_results = iris_network.validate(iris_testers, iris_testers_corrects, iris_interpret_output)
-	print(f"{iris_results[0]} correct of {iris_results[1]}: {iris_results[2] * 100}% ")
-
+	print(f"{iris_results[0]} correct of {iris_results[1]} = {iris_results[2] * 100}%")
 
 

@@ -54,7 +54,7 @@ class Network:
 	def validate(self, inputs, expecteds, interpret_output):
 		correct = 0
 		for input, expected in zip(inputs, expecteds):
-			result = interpret_output(input)
+			result = interpret_output(self.outputs(input))
 			if result == expected:
 				correct += 1
 
