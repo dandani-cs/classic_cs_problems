@@ -56,10 +56,9 @@ class Network:
 		correct = 0
 		# counter = 0
 		for input, expected in zip(inputs, expecteds):
-			# print(counter)
-			# print(input, expected)
+			# print("input, expected: ", input, expected)
 			result = interpret_output(self.outputs(input))
-			# print(result)
+			# print("result: ", result)
 			if result == expected:
 				correct += 1
 
